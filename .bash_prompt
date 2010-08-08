@@ -1,0 +1,38 @@
+#
+# Colorized prompt, with different username colors for different systems.
+#
+
+# Color codes
+RED='\[\033[01;31m\]'
+GREEN='\[\033[01;32m\]'
+YELLOW='\[\033[01;33m\]'
+BLUE='\[\033[01;34m\]'
+PURPLE='\[\033[01;35m\]'
+CYAN='\[\033[01;36m\]'
+WHITE='\[\033[01;37m\]'
+NIL='\[\033[00m\]'
+
+# Hostname styles
+FULL='\H'
+SHORT='\h'
+
+# System => color/hostname map:
+#   UC: username color
+#   LC: location/cwd color
+#   HD: hostname display (\h vs \H)
+# Defaults:
+UC=$GREEN
+LC=$BLUE
+HD=$FULL
+
+HOST=`hostname | cut -d '.' -f 1`
+DOMAIN=`hostname | cut -d '.' -f 2-`
+
+# Colourised prompts
+# Manually cut hostname; hostname -s bails out on some systems.
+case $HOST in
+    galactica | serenity ) UC=$YELLOW LC=$GREEN HD=$SHORT ;;
+    hatti ) UC=$CYAN ;;
+    testremote | btbytes ) UC=$RED HD=$SHORT ;;
+    xen ) UC=$RED ;;
+esac
