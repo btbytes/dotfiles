@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+
+#http://gist.github.com/440894
+'''
+newpost
+
+script to kickstart a new jekyll post.
+pradeep@btbytes.com
+2010-06-16
+
+Usage: $./newpost [post title]
+say what you have to say.
+^D
+'''
+import time
+import sys
+today = time.strftime("%Y-%m-%d")
+
+name = time.strftime('%H%M%S')
+
+if len(sys.argv) > 1:
+    name = '_'.join(sys.argv[1:]).lower()
+else:
+    name = raw_input("Post title : ")
+    name = name.replace(' ', '_').lower()
+
+name = "%s-%s.txt" % (time.strftime("%Y-%m-%d"), name)
+f = open(name, 'w')
+header = '''---
+title: %s
+layout: post
+---
+
+'''  % (name, )
+
+lines = []
+while 1:
+    try:
+        line = raw_input("")
+        lines.append(line)
+    except Exception,e: #KeyboardInterrupt,e:
+        f.write(header)
+        f.writelines('\n'.join(lines))
+	f.write('\n')
+        f.close()
+	exit(0)
+
