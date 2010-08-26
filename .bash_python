@@ -45,3 +45,4 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_LOG_FILE='/tmp/pip-log.txt'
 # Use a cache
 export PIP_DOWNLOAD_CACHE='/tmp/pip_cache'
+source /usr/local/bin/virtualenvwrapper.sh
