@@ -9,5 +9,4 @@ then
 else
     ln -s  $HOME/.tmux.conf
 fi
-
-
+ln -s .vimrc.local ~/.vimrc.local

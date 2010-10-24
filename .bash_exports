@@ -1,0 +1,8 @@
+export DISPLAY=:0.0
+export EDITOR=vim
+
+# PATH
+MY_PATH=$HOME/bin
+export PATH=$MY_PATH:$PATH
+
+
