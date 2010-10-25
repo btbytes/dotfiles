@@ -3,8 +3,8 @@
 # inspired bySridhar Ratna's script of same name.
 
 INSTALL="sudo aptitude install -y "
-PIP="sudo pip install"
-
+PIP="sudo pip install "
+CABAL="cabal install "
 sudo apt-get install aptitude
 
 # the essentials
@@ -49,3 +49,11 @@ $INSTALL luarocks
 
 # Vala
 $INSTALL libglib2.0-dev gettext
+
+# Typesetting and document composition
+$INSTALL pandoc asciidoc 
+
+# context provides texlive, some good ttfs luatex etc.,
+$INSTALL context 
+$PIP docutils
+
