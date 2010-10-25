@@ -19,8 +19,9 @@ $INSTALL emacs-snapshot slime ess
 # dev setup
 $INSTALL build-essential cmake 
 $INSTALL flex bison m4
-$INSTALL vim tmux git-core subversion 
+$INSTALL vim tmux git-core subversion bzr
 $INSTALL valgrind exuberant-ctags
+$INSTALL autoconf automake
 
 # Webdev
 $INSTALL nginx 
@@ -37,6 +38,9 @@ $INSTALL ack-grep colordiff multitail
 # multimedia
 $INSTALL msttcorefonts
 
+# R
+$INSTALL r-base
+
 # Lisp
 $INSTALL sbcl cl-asdf
 
@@ -44,4 +48,4 @@ $INSTALL sbcl cl-asdf
 $INSTALL luarocks
 
 # Vala
-$INSTALL libglib2.0-dev
+$INSTALL libglib2.0-dev gettext
